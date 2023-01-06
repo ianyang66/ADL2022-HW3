@@ -1,0 +1,11 @@
+python run_summarization.py \
+    --model_name_or_path ./best-summarization \
+    --do_predict \
+    --test_file $1 \
+    --output_dir ./best-summarization \
+    --output_file $2 \
+    --predict_with_generate \
+    --text_column maintext \
+    --summary_column title \
+    --per_device_eval_batch_size 16 \
+    --num_beams 6 \

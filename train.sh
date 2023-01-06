@@ -1,0 +1,18 @@
+python run_summarization.py \
+  --do_train \
+  --do_eval \
+  --model_name_or_path google/mt5-small \
+  --train_file $1 \
+  --validation_file $2 \
+  --output_dir $3 \
+  --num_train_epoch 35 \
+  --per_device_train_batch_size=2 \
+  --gradient_accumulation_steps=16 \
+  --per_device_eval_batch_size=2 \
+  --eval_accumulation_steps=16 \
+  --predict_with_generate \
+  --text_column maintext \
+  --summary_column title \
+  --adafactor \
+  --learning_rate 1e-4 \
+  --warmup_ratio 0.1 \

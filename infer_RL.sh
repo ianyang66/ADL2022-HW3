@@ -1,0 +1,1 @@
+accelerate launch infer_RL.py --test_file $1 --output_json $2
